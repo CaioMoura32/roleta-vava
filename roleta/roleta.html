@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/css/uikit.min.css" />
+</head>
+<style>
+  html {
+    background: rgb(38, 37, 37);
+    font-family: cursive;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .uk-range {
+    width: auto;
+    color: -internal-light-dark(rgb(16, 16, 16), rgb(202, 41, 41));
+  }
+
+  .but1 {
+    border: none;
+    background: #fd435c;
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 20px 0px 0px 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .itens {
+    background-image: url("../imagem/vava-codigo.jpg") !important;
+    object-fit: cover;
+    padding: 140px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .but1:hover {
+    background: #972c3a;
+  }
+
+  .container .uk-icon {
+    margin-top: -2px;
+  }
+
+  .campo-sorteado {
+    background: #fff;
+    display: inline-block;
+    padding: 20px 30px;
+    min-width: 268px;
+    border-radius: 0px 20px 20px 0px;
+    min-height: 25px;
+    border-bottom: 4px solid #fd435c;
+    height: 100%;
+  }
+
+  .campo-flex {
+    display: flex;
+  }
+
+  .back-cinza-claro {
+    background: #4e182c91;
+    display: grid;
+    padding: 40px 20px;
+    border-radius: 25px;
+  }
+
+  .campo-sorteado p {
+    margin: 0px !important;
+  }
+
+  .campo-sorteado span {
+    margin: 0px !important;
+  }
+
+  .nome-sorteado1 {
+    color: #020202;
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 25px;
+    width: 50%;
+  }
+
+  .nome-sorteado2 {
+    color: #020202;
+    font-weight: bold;
+    display: inline-block;
+    min-width: auto;
+    width: 200px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 16px;
+    border-left: 1px solid #972c3a;
+  }
+
+  .titulo {
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .campo-quantidade-de-nomes {
+    width: 200px;
+    display: inline-grid;
+    padding: 20px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(41, 23, 35, 1) 0%, rgba(253, 65, 83, 1) 100%);
+  }
+
+  .redultado-ranger {
+    width: 27px;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .font-quantidade-de-nomes {
+    color: #fff;
+  }
+
+  .container-secao-do-sorteado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .uk-icon {
+    transition: 0.3s;
+  }
+
+  .but1:hover .uk-icon {
+    padding-left: 5px;
+  }
+
+  .but1:hover .campo-sorteado {
+    border-bottom: 1px solid #972c3a !important;
+  }
+
+  .container-botao-gerar-nomes {
+    height: 100%;
+  }
+
+  @media(max-width: 877px) {
+    .container-secao-do-sorteado {
+      display: block;
+    }
+
+    .container-botao-gerar-nomes {
+      height: auto;
+    }
+
+    .but1 {
+      border-radius: 20px;
+      padding: 8px 20px;
+      margin-bottom: 10px;
+    }
+
+    .nome-sorteado1 {
+      height: 100%;
+    }
+
+    .nome-sorteado2 {
+      height: auto;
+      min-width: auto;
+    }
+
+    .campo-sorteado {
+      border-radius: 20px;
+      width: 80%;
+      max-height: 100%;
+      padding: 8px 20px;
+    }
+  }
+
+  @media(max-width: 667px) {
+    .itens {
+      padding: 20px !important;
+    }
+  }
+</style>
+
+<body>
+  <div class="container uk-container">
+    <div class="itens">
+      <div class="back-cinza-claro">
+        <h1 class="titulo">Bem vindo a Roleta de nomes</h1>
+        <hr>
+        <div>
+          <div class="campo-quantidade-de-nomes">
+            <label class="font-quantidade-de-nomes" for="quantidadeInput">Quantidade de Nomes:</label>
+            <div>
+              <input class="uk-range" type="range" aria-label="range" min="0" value="0" id="quantidadeInput">
+              <span class="redultado-ranger">: 0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-secao-do-sorteado">
+          <div class="container-botao-gerar-nomes">
+            <button class="but1" onclick="gerarNomes()">Gerar Nome <span uk-icon="happy"></span></button>
+          </div>
+          <div>
+            <div class="campo-sorteado">
+              <span style="display: flex;">
+                <p class="nome-sorteado1">Nome sorteado: </p>
+                <p id="resultado" class="nome-sorteado2"></p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/js/uikit.min.js"
+    integrity="sha512-OZ9Sq7ecGckkqgxa8t/415BRNoz2GIInOsu8Qjj99r9IlBCq2XJlm9T9z//D4W1lrl+xCdXzq0EYfMo8DZJ+KA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/js/uikit-icons.min.js"
+    integrity="sha512-hcz3GoZLfjU/z1OyArGvM1dVgrzpWcU3jnYaC6klc2gdy9HxrFkmoWmcUYbraeS+V/GWSgfv6upr9ff4RVyQPw=="
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script>
+  const nomes = ["Caio", "Mylena", "Pedro", "Kennedy", "Andreo", "Chihison", "Lucas"];
+  function gerarNomes() {
+    const quantidade = parseInt(document.getElementById("quantidadeInput").value, 10);
+    const index_maximo = nomes.length - 1;
+
+    if (quantidade > nomes.length) {
+      alert("Não há nomes suficientes para gerar a quantidade desejada.");
+      return;
+    }
+
+    let resultados = '';
+
+    while (resultados.split(',').length - 1 < quantidade) {
+      const index_aleatorio = random(index_maximo);
+      const nomeSelecionado = nomes[index_aleatorio];
+
+      if (!resultados.includes(nomeSelecionado)) {
+        resultados += nomeSelecionado + ',';
+      }
+    }
+
+    document.getElementById("resultado").innerHTML = resultados;
+  }
+
+  function random(v) {
+    var r = new Uint8Array(1);
+    window.crypto.getRandomValues(r);
+    if (r[0] <= v) {
+      return r[0];
+    }
+    return random(v);
+  }
+</script>
+
+<script>
+  let maximoNomes = nomes.length;
+  let imput = document.getElementById("quantidadeInput");
+  imput.max = maximoNomes;
+</script>
+
+<script>
+  var $range = document.querySelector('input'),
+    $value = document.querySelector('span');
+
+  $range.addEventListener('input', function () {
+    $value.textContent = this.value;
+  });
+</script>
