@@ -92,6 +92,7 @@
 .uk-background-primary {
     z-index: 1;
     position: relative;
+    background-color: #ba772f;
     background-image: url(imagem/img-feniz-grid-pagina-inicial.png);
     background-size: cover;
     background-position: center;
