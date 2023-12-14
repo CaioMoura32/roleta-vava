@@ -1,0 +1,141 @@
+.uk-card-default {
+    background: #2c2c2c6b !important;
+    border-radius: 20px;
+    align-items: center;
+    width: auto;
+}
+
+.form{
+    border: 3px solid #f0506e;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.form p{
+    text-align: left !important;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.uk-button-default {
+    border-radius: 25px;
+    color: #ee8a4e;
+    text-align: center !important;
+    border: none;
+    background: #575055;
+    transition: 0.3s;
+    padding: 0px !important;
+}
+
+.botao-lets-go .uk-button-default:hover .lets-go{
+    display: inline;
+}
+
+.botao-lets-go .uk-button-default .uk-icon{
+    transition: 0.3s;
+}
+
+.botao-lets-go .uk-button-default:hover .uk-icon{
+    margin-right: -15px;
+}
+
+.lets-go{
+    display: none;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.uk-button-default:hover {
+    color: #ee8a4e;
+    background: #312c2f;
+    padding: 0px 20px !important;
+}
+
+.texto-explicativo{
+    font-size: 16px;
+    text-align: left !important;
+}
+
+.titulo .uk-dropdown {
+    min-width: 320px;
+    border-radius: 25px;
+    
+}
+
+.titulo .uk-icon{
+    color: #fff;
+}
+
+
+.uk-input{
+    border-radius: 25px;
+}
+
+.uk-background-muted .uk-label{
+    text-align: left !important;
+    margin-bottom: -10px;
+}
+
+.uk-background-muted {
+    background-color: #ba772f85;
+    border-radius: 25px 0px 0px 25px;
+    z-index: 20;
+}
+
+.titulo {
+    color: #fff;
+    font-size: 37px;
+}
+
+.uk-background-primary {
+    z-index: 1;
+    position: relative;
+    background-image: url(imagem/img-feniz-grid-pagina-inicial.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px 25px 25px 0px;
+}
+
+html {
+    background: rgb(38, 37, 37);
+    font-family: Roboto;
+}
+
+.back-blur {
+    background-image: url(imagem/fundo-vava-pagina-inicial.jpeg);
+    background-size: cover;
+    filter: blur(8px);
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.uk-section-default {
+    padding: 0px;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.uk-container-default {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    filter: none !important;
+    z-index: 2;
+    position: relative;
+    filter: none !important;
+
+}
+
+.uk-background-muted {
+    text-align: center;
+}
